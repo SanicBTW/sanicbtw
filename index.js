@@ -8,7 +8,7 @@ styles.setBodyStyle("font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
 
 if(platform == "Desktop")
 {
-    styles.setClassStyle("outer", `width: 100%; height: 98vh; display: flex; justify-content: center; align-items: center;`);
+    styles.setClassStyle("outer", `width: 100%; height: 97.9vh; display: flex; justify-content: center; align-items: center;`);
 }
 else
 {
@@ -24,22 +24,26 @@ elements.addHeader("Sanic", "h1", "centerHeader");
 elements.addParagraph("aka 'SanicBTW', 'Sanco', 'Saniczoned'", "alsoKnownAs");
 elements.addParagraph("and idk what else", "lol");
 
-elements.addImage("./assets/images/icons/icons8-github-96.png", "githubImage");
+elements.addImage("./assets/images/icons/github.png", "githubImage");
 elements.addAnchor("https://github.com/SanicBTW/", "", "githubLink");
 styles.setStyle('githubImage', "width: 50px;");
 
 //why did i add thsi one lol
-elements.addImage("./assets/images/icons/icons8-spotify-96.png", "spotifyImage");
+elements.addImage("./assets/images/icons/spotify.png", "spotifyImage");
 elements.addAnchor("https://open.spotify.com/user/sansunder718?si=bd80fcafede34e0c/", "", "spotifyLink");
-styles.setStyle('spotifyImage', "width: 50px; margin-left: 1rem;");
+
+elements.addImage("./assets/images/icons/osu.png", "osuImage");
+elements.addAnchor("https://osu.ppy.sh/users/18296030", "", "osuLink");
 
 styles.setStyle("centerHeader", "font-family: 'Courier New', Courier, monospace; text-align: center;")
 styles.setStyle(["alsoKnownAs", "lol"], "font-family: 'Courier New', Courier, monospace; text-align: left;");
+styles.setStyle(['spotifyImage', "osuImage"], "width: 50px; margin-left: 1rem;");
 
 elements.appendTo("mainDiv", "first");
 
 elements.appendTo("githubImage", "githubLink");
 elements.appendTo("spotifyImage", "spotifyLink");
+elements.appendTo("osuImage", "osuLink");
 
-elements.appendTo(["githubLink", "spotifyLink"], "iconsDiv");
+elements.appendTo(["githubLink", "spotifyLink", "osuLink"], "iconsDiv");
 elements.appendTo(["centerHeader", "alsoKnownAs", "lol", "iconsDiv"], "mainDiv");
