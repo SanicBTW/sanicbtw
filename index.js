@@ -40,11 +40,13 @@ elements.addImage("./assets/images/icons/steam.png", "steamImage");
 elements.addAnchor("https://steamcommunity.com/id/sancodezapato/", "", "steamLink");
 
 elements.addImage("./assets/images/icons/discord.png", "discordImage");
-elements.addParagraph("", "discordTooltip");
+
+elements.addImage("./assets/images/icons/instagram.png", "instagramImage");
+elements.addAnchor("https://instagram.com/sancodezapato", "", "instagramLink");
 
 styles.setStyle("centerHeader", "text-align: center;");
 styles.setStyle(["alsoKnownAs", "lol"], "font-family: 'Courier New', Courier, monospace; text-align: left;");
-styles.setStyle(['spotifyImage', "osuImage", "steamImage", "discordImage"], "width: 50px; margin-left: 1rem;");
+styles.setStyle(['spotifyImage', "osuImage", "steamImage", "discordImage", "instagramImage"], "width: 50px; margin-left: 1rem;");
 
 elements.appendTo("mainDiv", "first");
 
@@ -52,23 +54,28 @@ elements.appendTo("githubImage", "githubLink");
 elements.appendTo("spotifyImage", "spotifyLink");
 elements.appendTo("osuImage", "osuLink");
 elements.appendTo("steamImage", "steamLink");
-elements.appendTo("discordImage", "discordTooltip");
+elements.appendTo("instagramImage", "instagramLink");
 
-elements.setAttribute(["githubLink", "spotifyLink", "osuLink", "steamLink"], 'target', "_blank");
-elements.setAttribute("discordTooltip", "title", "»hola»");
+elements.setAttribute(["githubLink", "spotifyLink", "osuLink", "steamLink", "instagramLink"], 'target', "_blank");
+elements.setAttribute("discordImage", "title", "sanco#0970");
 
-elements.appendTo(["githubLink", "spotifyLink", "osuLink", "steamLink", "discordTooltip"], "iconsDiv");
+elements.appendTo(["githubLink", "spotifyLink", "osuLink", "steamLink", "discordImage", "instagramLink"], "iconsDiv");
 elements.appendTo(["centerHeader", "alsoKnownAs", "lol", "iconsDiv"], "mainDiv");
 
-//for the easter egg
-var easterEggWord = ["f", "n", "f"];
-
-var pressedKeys = [];
-
 elements.onKeydown(function(key) {
-    if(pressedKeys.length < 3)
+    firstEasterEgg(key);
+    secondEasterEgg(key);
+});
+
+//For easter egg 1
+var easterEggWord1 = ["f", "n", "f"];
+var pressedKeys1 = [];
+
+function firstEasterEgg(key)
+{
+    if(pressedKeys1.length < 3)
     {
-        pressedKeys.push(key.key);
+        pressedKeys1.push(key.key);
         var check = checkVal();
 
         if(check == "nothing")
@@ -88,48 +95,89 @@ elements.onKeydown(function(key) {
             window.location.assign("https://sanicbtw.github.io/FNF-PsychEngine-0.6-HTML5/");
             console.log("Success easter egg, resetting array");
             elements.changeText("centerHeader", "Redirecting...");
-            pressedKeys = [];
+            pressedKeys1 = [];
         }
         if(check == false)
         {
             elements.changeText("centerHeader", "Sanic");
             console.log("Failed easter egg, resetting array");
-            pressedKeys = [];
+            pressedKeys1 = [];
         }
     }
     else
     {
         elements.changeText("centerHeader", "Sanic");
         console.log("Failed easter egg, resetting array");
-        pressedKeys = [];
+        pressedKeys1 = [];
     }
-});
+}
 
 function checkVal()
 {
-    if(pressedKeys[0] == easterEggWord[0] &&
-        pressedKeys[1] == easterEggWord[1] &&
-        pressedKeys[2] == easterEggWord[2])
+    if(pressedKeys1[0] == easterEggWord1[0] &&
+        pressedKeys1[1] == easterEggWord1[1] &&
+        pressedKeys1[2] == easterEggWord1[2])
         {
             return "everything";
         }
-    else if(pressedKeys[0] == easterEggWord[0] &&
-        pressedKeys[1] == easterEggWord[1] &&
-        pressedKeys[2] != easterEggWord[2])
+    else if(pressedKeys1[0] == easterEggWord1[0] &&
+        pressedKeys1[1] == easterEggWord1[1] &&
+        pressedKeys1[2] != easterEggWord1[2])
         {
             return "last";
         }
-    else if(pressedKeys[0] == easterEggWord[0] &&
-        pressedKeys[1] != easterEggWord[1] &&
-        pressedKeys[2] != easterEggWord[2])
+    else if(pressedKeys1[0] == easterEggWord1[0] &&
+        pressedKeys1[1] != easterEggWord1[1] &&
+        pressedKeys1[2] != easterEggWord1[2])
         {
             return "second";
         }
-    else if(pressedKeys[0] != easterEggWord[0] &&
-        pressedKeys[1] != easterEggWord[1] &&
-        pressedKeys[2] != easterEggWord[2])
+    else if(pressedKeys1[0] != easterEggWord1[0] &&
+        pressedKeys1[1] != easterEggWord1[1] &&
+        pressedKeys1[2] != easterEggWord1[2])
         {
             return "nothing";
         }
     return false;
+}
+
+//for easter egg 2
+var sameKeyPressTimes = 0;
+var easterEggComb1 = {
+    times: 20, key: " "
+}
+var pressedKeys2 = {
+    times: 0, key: "none"
+}
+
+function secondEasterEgg(key)
+{
+    var lastKey = "";
+
+    lastKey = pressedKeys2.key;
+    pressedKeys2.key = key.key;
+
+    if(key.key == lastKey)
+    { 
+        ++sameKeyPressTimes;
+    }
+    else
+    {
+        sameKeyPressTimes = 0;
+    }
+    pressedKeys2.times = sameKeyPressTimes;
+
+    if(pressedKeys2.key == easterEggComb1.key && pressedKeys2.times == easterEggComb1.times - 1)
+    {
+        elements.changeText("centerHeader", "PLEASE DONT PRESS AGAIN");
+        setTimeout(() => {
+            elements.changeText("centerHeader", "Sanic");
+        }, 15000);
+    }
+
+    if(pressedKeys2.key == easterEggComb1.key && pressedKeys2.times == easterEggComb1.times)
+    {
+        elements.changeText("centerHeader", "warned you");
+        window.location.assign("./assets/easter/easterEgg.html");
+    }
 }
