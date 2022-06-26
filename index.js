@@ -35,15 +35,21 @@ elements.addAnchor("https://open.spotify.com/user/sansunder718?si=bd80fcafede34e
 elements.addImage("./assets/images/icons/osu.png", "osuImage");
 elements.addAnchor("https://osu.ppy.sh/users/18296030", "", "osuLink");
 
+elements.addImage("./assets/images/icons/steam.png", "steamImage");
+elements.addAnchor("https://steamcommunity.com/id/sancodezapato/", "", "steamLink");
+
 styles.setStyle("centerHeader", "font-family: 'Courier New', Courier, monospace; text-align: center;")
 styles.setStyle(["alsoKnownAs", "lol"], "font-family: 'Courier New', Courier, monospace; text-align: left;");
-styles.setStyle(['spotifyImage', "osuImage"], "width: 50px; margin-left: 1rem;");
+styles.setStyle(['spotifyImage', "osuImage", "steamImage"], "width: 50px; margin-left: 1rem;");
 
 elements.appendTo("mainDiv", "first");
 
 elements.appendTo("githubImage", "githubLink");
 elements.appendTo("spotifyImage", "spotifyLink");
 elements.appendTo("osuImage", "osuLink");
+elements.appendTo("steamImage", "steamLink");
 
-elements.appendTo(["githubLink", "spotifyLink", "osuLink"], "iconsDiv");
+elements.setAttribute(["githubLink", "spotifyLink", "osuLink", "steamLink"], 'target', "_blank");
+
+elements.appendTo(["githubLink", "spotifyLink", "osuLink", "steamLink"], "iconsDiv");
 elements.appendTo(["centerHeader", "alsoKnownAs", "lol", "iconsDiv"], "mainDiv");
