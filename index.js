@@ -1,5 +1,11 @@
 var elements = new ElementsHandler();
 var styles = new StylesHandler();
+var anims = new AnimationHandler();
+/*
+var basicDebugger = new Debugger(true);
+basicDebugger.addToHeader("Developer Build");
+basicDebugger.addToHeader("Build 9");
+*/
 
 styles.setFavicon('./assets/images/favicon.jpg');
 
@@ -44,9 +50,16 @@ elements.addImage("./assets/images/icons/discord.png", "discordImage");
 elements.addImage("./assets/images/icons/instagram.png", "instagramImage");
 elements.addAnchor("https://instagram.com/sancodezapato", "", "instagramLink");
 
+//WHYY, i dont really use it but its cool ig
+elements.addImage("./assets/images/icons/tiktok.png", "tiktokImage");
+elements.addAnchor("https://www.tiktok.com/@sanicbtw", "", "tiktokLink");
+
+elements.addImage("./assets/images/icons/youtube.png", "youtubeImage");
+elements.addAnchor("https://www.youtube.com/channel/UCwF00oqUF8D5Ro_IMzo5wGw", "", "youtubeLink")
+
 styles.setStyle("centerHeader", "text-align: center;");
 styles.setStyle(["alsoKnownAs", "lol"], "font-family: 'Courier New', Courier, monospace; text-align: left;");
-styles.setStyle(['spotifyImage', "osuImage", "steamImage", "discordImage", "instagramImage"], "width: 50px; margin-left: 1rem;");
+styles.setStyle(['spotifyImage', "osuImage", "steamImage", "discordImage", "instagramImage", "tiktokImage", "youtubeImage"], "width: 50px; margin-left: 1rem;");
 
 elements.appendTo("mainDiv", "first");
 
@@ -55,11 +68,13 @@ elements.appendTo("spotifyImage", "spotifyLink");
 elements.appendTo("osuImage", "osuLink");
 elements.appendTo("steamImage", "steamLink");
 elements.appendTo("instagramImage", "instagramLink");
+elements.appendTo("tiktokImage", "tiktokLink");
+elements.appendTo("youtubeImage", "youtubeLink");
 
-elements.setAttribute(["githubLink", "spotifyLink", "osuLink", "steamLink", "instagramLink"], 'target', "_blank");
+elements.setAttribute(["githubLink", "spotifyLink", "osuLink", "steamLink", "instagramLink", "tiktokLink", "youtubeLink"], 'target', "_blank");
 elements.setAttribute("discordImage", "title", "sanco#0970");
 
-elements.appendTo(["githubLink", "spotifyLink", "osuLink", "steamLink", "discordImage", "instagramLink"], "iconsDiv");
+elements.appendTo(["githubLink", "spotifyLink", "osuLink", "steamLink", "discordImage", "instagramLink", "tiktokLink", "youtubeLink"], "iconsDiv");
 elements.appendTo(["centerHeader", "alsoKnownAs", "lol", "iconsDiv"], "mainDiv");
 
 elements.onKeydown(function(key) {
@@ -92,7 +107,7 @@ function firstEasterEgg(key)
         }
         if(check == "everything")
         {
-            window.location.assign("https://sanicbtw.github.io/FNF-PsychEngine-0.6-HTML5/");
+            window.location.assign("https://sanicbtw.github.io/FNF-PsychEngine-0.3.2-hotfix/");
             console.log("Success easter egg, resetting array");
             elements.changeText("centerHeader", "Redirecting...");
             pressedKeys1 = [];
@@ -144,7 +159,7 @@ function checkVal()
 //for easter egg 2
 var sameKeyPressTimes = 0;
 var easterEggComb1 = {
-    times: 20, key: " "
+    times: 5, key: " "
 }
 var pressedKeys2 = {
     times: 0, key: "none"
@@ -181,3 +196,8 @@ function secondEasterEgg(key)
         window.location.assign("./assets/easter/easterEgg.html");
     }
 }
+
+/*
+basicDebugger.addToHeader("Amount of childs added: " + addedChilds);
+basicDebugger.addToHeader("Amount of debug headers added: " + addedDebugHeaders);
+anims.textColorFade([255, 255, 255], [0, 255 , 255], 25, 100, "debugHeader0")*/
