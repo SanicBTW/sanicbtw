@@ -1,7 +1,7 @@
 var elements = new ElementsHandler();
 var styles = new StylesHandler();
 
-styles.setBodyStyle("font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;");
+styles.setBodyStyle("font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; background-color: black;");
 
 if(platform == "Desktop")
 {
