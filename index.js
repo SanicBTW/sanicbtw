@@ -1,11 +1,9 @@
-var elements = new ElementsHandler();
+/*var elements = new ElementsHandler();
 var styles = new StylesHandler();
 var anims = new AnimationHandler();
-/*
 var basicDebugger = new Debugger(true);
 basicDebugger.addToHeader("Developer Build");
 basicDebugger.addToHeader("Build 9");
-*/
 
 styles.setFavicon('./assets/images/favicon.jpg');
 
@@ -195,7 +193,7 @@ function secondEasterEgg(key)
         elements.changeText("centerHeader", "warned you");
         window.location.assign("./assets/easter/easterEgg.html");
     }
-}
+}*/
 
 /*
 basicDebugger.addToHeader("Amount of childs added: " + addedChilds);
