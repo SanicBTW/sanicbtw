@@ -10,6 +10,4 @@ I'm currently working on:
 
 [Fight or Flight Port](https://github.com/SanicBTW/Fight-or-Flight-Port)
 
-Planning on updating:
-
 [VS Cirno Android](https://github.com/SanicBTW/VS-Cirno-Android)
