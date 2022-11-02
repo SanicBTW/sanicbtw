@@ -1,3 +1,7 @@
-# Slow updates, sorry
+# How is the progress on the other ports
 
-Projects are being updated very slowly, I'm sorry about it but I'm kind of losing the motivation to continue developing lately, don't worry though, I will try to finish this dumb shit :skull:
+Have to rewrite all of them to use my new base (or engine whatever you want to call it) 
+
+I will probably start working on it after I finish with the update to the engine
+
+General development progress is still slow, even slower than last month surely
