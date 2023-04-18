@@ -1,2 +1,2 @@
-# Announcement
-The server is dead, long gone, will try to fix it whenever I can but will take months, in the meanwhile I will use a laptop for partial services and keeping development active
+# Server is partially back (Only song services are back)
+I had to buy a VPS for the time, it will be up for 1 month lol
