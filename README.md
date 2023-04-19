@@ -1,20 +1,2 @@
-# Important announcement
-Hey everyone, school started and i might end up updating my projects even more slowly than before, sorry, but i promise that more cool stuff is coming soon :D
-
-## I'm currently working on:
-
-[Fight or Flight Port](https://github.com/SanicBTW/Fight-or-Flight-Port)
-
-[Psych Engine 0.3.2h](https://github.com/SanicBTW/FNF-PE-0.3.2h)
-
-## Planning on finishing:
-
-[Rolling Again Port](https://github.com/SanicBTW/Rolling-Again-Port)
-
-[Scarlet Melopoeia Port](https://github.com/SanicBTW/Scarlet-Melopoeia-Port)
-
-## Needs to be updated
-
-[VS Cirno Android](https://github.com/SanicBTW/VS-Cirno-Android)
-
-[Forever Engine HTML5](https://github.com/SanicBTW/FNF-Forever-Engine)
+# Server is partially back (Only song services are back)
+I had to buy a VPS for the time, it will be up for 1 month lol
