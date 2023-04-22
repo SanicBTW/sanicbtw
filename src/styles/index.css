@@ -1,0 +1,28 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(40,40,40,1) 0%, rgba(20,20,20,1) 35%, rgba(0,0,0,1) 100%);
+    color: white;
+}
+
+.center
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* maybe i will use it some other day but i just want to center stuff rn
+.
+{
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+}*/

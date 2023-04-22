@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sanco</title>
+
+        <link href="./assets/images/funky.png" rel="shortcut icon">
+
+        <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+        <script>eruda.init();</script>
+
+        <link href="./src/styles/index.css" rel="stylesheet">
+        <link href="./src/styles/buttons.css" rel="stylesheet">
+
+        <script src="./src/scripts/FPSLoop.js"></script>
+        <script src="./src/scripts/Main.js" defer></script>
+    </head>
+    <body class="center">
+
+        <div page="startup" id="start">
+            <h1 style="text-align: center;" id="header">SanicBTW</h1>
+            <p style="text-align: left;" id="sub">aka sanco</p>
+            <div class="list" id="start2">
+                <button id="socials">Social Media</button>
+                <button id="projects">Projects</button>
+                <button id="language">Language</button>
+            </div>
+        </div>
+
+        <img style="width: 24px; margin: 1rem; position: fixed; bottom: 0; left: 0; display: none; cursor: pointer; transition: 0.5s;" src="./assets/images/back.png" id="back">
+        <p style="position: fixed; bottom: 0; right: 0; opacity: 0.5; margin: 1rem; text-align: center;" id="debug">Version 3.0R [ Preview ]</p>
+    </body>
+</html>

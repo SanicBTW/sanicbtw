@@ -76,11 +76,13 @@ function backChange(canBack = false, func = null, shouldHideAfter = true)
     {
         document.getElementById('backbtn').style.display = "block";
         document.getElementById('backbtn').style.cursor = "pointer";
+        document.getElementById('backbtn').style.opacity = 1;
         document.getElementById('backbtn').onclick = function()
         { 
             func();
             if(shouldHideAfter)
             {
+                document.getElementById('backbtn').style.opacity = 0;
                 document.getElementById('backbtn').style.cursor = "default";
                 document.getElementById('backbtn').style.display = "none";
             }
